@@ -5,7 +5,9 @@ function GeneratePoemButton() {
   const buttonStyles = {
     backgroundColor: '#FFF',
     color: '#000',
-    borderRadius: '2'
+    borderRadius: '0.4rem',
+    padding: '0.5rem',
+    border: 'solid'
   }
 
   return (
