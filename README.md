@@ -16,6 +16,15 @@ This project utilizes the RapidAPI Walt Whitman Poems API to randomly generate a
 
 ## Setup/Installation Requirements
 
+1. Clone project from github
+2. Open in IDE / Text Editor
+3. Open terminal
+4. Check that you are in the main directory, file path should end with `whitman-generate`. If you are not in the main directory, navigate to main directory with `cd whitman-generate`
+5. Enter the following commands in order, to install, build and run the application :
+* `npm install`  (This command is only necessary the first time you open the project on your computer. It may take several minutes for the install to complete - this is normal)
+* `dotnet build` 
+* `dotnet run`
+
 To use this project on your local machine, you will need an API key for the Walt Whitman Poems API
 1. Navigate to the [RapidAPI website](https://rapidapi.com) and set up an account.
 2. Search for the [Walt Whitman Poems API](https://rapidapi.com/pafmon/api/walt-whitman-poems/details) and select the the Walt Whitman Poems result.
