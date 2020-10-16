@@ -10,7 +10,7 @@ function Poem() {
     minWidth: '10rem',
     minHeight: '15rem',
     backgroundColor: '#000',
-    opacity: '0.75',
+    opacity: '0.85',
     color: '#FFF'
   }
 

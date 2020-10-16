@@ -3,8 +3,8 @@ import React from 'react';
 
 function GeneratePoemButton() {
   const buttonStyles = {
-    backgroundColor: '#FFF',
-    color: '#000',
+    backgroundColor: '#983295',
+    color: '#FFF',
     borderRadius: '0.4rem',
     padding: '0.5rem',
     border: 'solid'
