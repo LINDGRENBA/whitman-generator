@@ -10,6 +10,10 @@ function GeneratePoemButton() {
     border: 'solid'
   }
 
+  // onclick(){
+
+  // }
+
   return (
     <button style={buttonStyles}>
       Generate New Poem
