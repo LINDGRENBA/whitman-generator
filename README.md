@@ -14,6 +14,10 @@
 
 This project utilizes the RapidAPI Walt Whitman Poems API to randomly generate a Walt Whitman poem every time the page is refreshed. When you're in the mood for some Walt Whitman poems, whether it's a gloomy rainy day or you're sitting on a bench in the sun, watching the bees buzz around, fire up this application and enjoy!
 
+## Component Model
+
+![figma component model](src/images/component-model.png)
+
 ## Setup/Installation Requirements
 
 1. Clone project from github

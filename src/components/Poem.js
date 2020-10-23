@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneratePoemButton from './GeneratePoemButton';
+import PoemButton from './PoemButton';
 
 function Poem() {
   const poemBoxStyles = {
@@ -19,12 +19,19 @@ function Poem() {
     textAlign: 'center',
   }
 
+  function buttonClick(){
+    console.log("Hello world");
+  }
+
   return (
     <React.Fragment>
       <div style={poemBoxStyles}>
-        <GeneratePoemButton />
-        <div >
+        <PoemButton buttonClick={buttonClick}/>
+        <div id="successfulCall">
           <h1 style={poemStyles}>Poem Here</h1>
+        </div>
+        <div id="call-failed">
+
         </div>
       </div>
     </React.Fragment>
@@ -32,12 +39,3 @@ function Poem() {
 }
 
 export default Poem;
-
-// display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   padding: 2rem;
-//   min-width: 10rem;
-//   min-height: 15rem;
-//   background-color: #000;
-//   opacity: 0.75;

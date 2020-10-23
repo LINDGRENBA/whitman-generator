@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
-function GeneratePoemButton() {
+function PoemButton(props) {
   const buttonStyles = {
     backgroundColor: '#983295',
     color: '#FFF',
@@ -10,15 +11,15 @@ function GeneratePoemButton() {
     border: 'solid'
   }
 
-  // onclick(){
-
-  // }
-
   return (
-    <button style={buttonStyles}>
+    <button onClick={props.buttonClick} style={buttonStyles}>
       Generate New Poem
     </button>
   );
 }
 
-export default GeneratePoemButton;
+PoemButton.propTypes = {
+  buttonClick: PropTypes.func
+};
+
+export default PoemButton;
