@@ -2,7 +2,7 @@ import React from 'react';
 import GeneratePoemButton from './GeneratePoemButton';
 
 function Poem() {
-  const poemStyles = {
+  const poemBoxStyles = {
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -14,10 +14,20 @@ function Poem() {
     color: '#FFF'
   }
 
+  const poemStyles = {
+    border: '2px solid #FFF',
+    textAlign: 'center',
+  }
+
   return (
-    <div style={poemStyles}>
-      <GeneratePoemButton />
-    </div>
+    <React.Fragment>
+      <div style={poemBoxStyles}>
+        <GeneratePoemButton />
+        <div >
+          <h1 style={poemStyles}>Poem Here</h1>
+        </div>
+      </div>
+    </React.Fragment>
   )
 }
 
