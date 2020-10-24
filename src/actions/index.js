@@ -1,13 +1,15 @@
 import * as c from './ActionTypes';
 
-export const requestHeadlines = () => ({
-  
+export const requestPoemTitles = () => ({
+  type: c.REQUEST_POEM_TITLES
 });
 
-export const getPoemTitlesSuccess = () => ({
-  
+export const getPoemTitlesSuccess = (poemTitles) => ({
+  type: c.GET_POEM_TITLES_SUCCESS,
+  poemTitles
 });
 
-export const getPoemTitlesFailure = () => ({
-  
+export const getPoemTitlesFailure = (error) => ({
+  type: c.GET_POEM_TITLES_FAILURE,
+  error
 });

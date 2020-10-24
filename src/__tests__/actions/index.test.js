@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils';
 import * as actions from './../../actions';
 import * as c from './../../actions/ActionTypes';
 
@@ -11,14 +10,18 @@ describe('poem title reducer actions', () => {
   });
 
   it('getPoemTitlesSuccess should create a GET_POEM_TITLES_SUCCESS action', () => {
-    expect(actions.getPoemTitlesSuccess()).toEqual({
-      type: c.GET_POEM_TITLES_SUCCESS
+    const poemTitles = "Poem titles here";
+    expect(actions.getPoemTitlesSuccess(poemTitles)).toEqual({
+      type: c.GET_POEM_TITLES_SUCCESS,
+      poemTitles
     });
   });
 
   it('getPoemTitlesFailure should create a GET_POEM_TITLES_FAILURE action', () => {
-    expect(actions.getPoemTitlesFailure()).toEqual({
-      type: c.GET_POEM_TITLES_FAILURE
+    const error = "Some errors";
+    expect(actions.getPoemTitlesFailure(error)).toEqual({
+      type: c.GET_POEM_TITLES_FAILURE,
+      error
     });
   });
 
