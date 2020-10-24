@@ -19,7 +19,8 @@ export default (state = initialState, action) => {
       });
     case c.GET_POEM_TITLES_FAILURE:
       return Object.assign({}, state, {
-        
+        isLoading: false,
+        error: action.error
       });
       default:
         return state;
