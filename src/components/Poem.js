@@ -46,7 +46,7 @@ class Poem extends React.Component {
         isLoaded: true,
         poemTitles: jsonifiedResponse[0]
       });
-      return "dude";
+      console.log("dude");
     })
     .catch((error) => {
       this.setState({
@@ -60,49 +60,33 @@ class Poem extends React.Component {
     const success = document.querySelector('#successfulCall');
     // let result = this.makeApiCall(); 
     // console.log(result);
-
-    // fetch("https://pafmon-walt-whitman-poems.p.rapidapi.com/poems/", {
-    //   "method": "GET",
-    //   "headers": {
-    //     "x-rapidapi-host": "pafmon-walt-whitman-poems.p.rapidapi.com",
-    //     "x-rapidapi-key": "{process.env.API_KEY}"
-    //   }
-    // })
-    // .then(response => {
-    //   console.log(response.json);
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    // });
     success.textContent = "Hello there";
   }
   
   render() {
     const { error, isLoaded, poemTitles } = this.state;
+    let p;
     if(error){
-      return <React.Fragment>Error: {error.message}</React.Fragment>
-    } 
-    
-    // else if (!isLoaded) {
-    //   return <React.Fragment>Loading...</React.Fragment>
-    // } 
-    
-    else {
-      return (
-        <React.Fragment>
-          <div style={poemBoxStyles}>
-            <PoemButton buttonClick={this.buttonClick}/>
-            <div style={poemStyles}>
-              <h1 id="poemTitle">Poem Here {poemTitles[0]}</h1>
-              <p id="successfulCall"></p>
-            </div>
-            <div id="call-failed">
-  
-            </div>
-          </div>
-        </React.Fragment>
-      )
+      p = `Error: {error.message}`;
+    } else if (!isLoaded) {
+      p = "Not yet...";
+    } else {
+      p = "It worked!";
     }
+    return (
+      <React.Fragment>
+        <div style={poemBoxStyles}>
+          <PoemButton buttonClick={this.buttonClick}/>
+          <div style={poemStyles}>
+            <h1 id="poemTitle">Poem Here {p}</h1>
+            <p id="successfulCall"></p>
+          </div>
+          <div id="call-failed">
+
+          </div>
+        </div>
+      </React.Fragment>
+    )
   }
 
 }
