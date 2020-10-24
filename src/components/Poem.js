@@ -68,6 +68,7 @@ class Poem extends React.Component {
     } else {
       p = "Hello";
     }
+    // console.log(poemTitles);
     return (
       <React.Fragment>
         <div style={poemBoxStyles}>
