@@ -32,7 +32,8 @@ class Poem extends React.Component {
 
   // add functionality to fetch call to handle various error codes (e.g. 404)
 
-  makeApiCall = () => {
+  buttonClick = () => {
+    const success = document.querySelector('#successfulCall');
     fetch("https://pafmon-walt-whitman-poems.p.rapidapi.com/poems/", {
       "method": "GET",
       "headers": {
@@ -46,6 +47,7 @@ class Poem extends React.Component {
         isLoaded: true,
         poemTitles: jsonifiedResponse[0]
       });
+      success.textContent = "dude";
       console.log("dude");
     })
     .catch((error) => {
@@ -54,13 +56,6 @@ class Poem extends React.Component {
         error
       });
     });
-  }
-
-  buttonClick() {
-    const success = document.querySelector('#successfulCall');
-    // let result = this.makeApiCall(); 
-    // console.log(result);
-    success.textContent = "Hello there";
   }
   
   render() {
@@ -71,15 +66,15 @@ class Poem extends React.Component {
     } else if (!isLoaded) {
       p = "Not yet...";
     } else {
-      p = "It worked!";
+      p = "Hello";
     }
     return (
       <React.Fragment>
         <div style={poemBoxStyles}>
           <PoemButton buttonClick={this.buttonClick}/>
           <div style={poemStyles}>
-            <h1 id="poemTitle">Poem Here {p}</h1>
-            <p id="successfulCall"></p>
+            <h1 id="poemTitle">Poem Here</h1>
+            <p id="successfulCall">{p}</p>
           </div>
           <div id="call-failed">
 
