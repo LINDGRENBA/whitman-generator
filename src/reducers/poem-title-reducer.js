@@ -1,9 +1,18 @@
-const defaultState = {
+import * as c from './../actions/ActionTypes';
+
+const initialState = {
   error: null,
   isLoaded: false,
   poemTitles: []
 }
 
-export default (state = defaultState, action) => {
-  return state;
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case c.REQUEST_POEM_TITLES:
+      return Object.assign({}, state, {
+        isLoaded: false
+      });
+      default:
+        return state;
+    }
 };
