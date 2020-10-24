@@ -31,4 +31,18 @@ describe('poemTitleReducer', () => {
     });
   });
 
+  test('successfully getting poem titles should change isLoading to false and update poemTitles', () => {
+    const poemTitles = "Some titles";
+    action = {
+      type: c.GET_POEM_TITLES_SUCCESS,
+      poemTitles
+    };
+
+    expect(poemTitleReducer(defaultState, action)).toEqual({
+      error: null,
+      isLoading: false,
+      poemTitles: "Some titles"
+    });
+  });
+
 });
