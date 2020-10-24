@@ -25,7 +25,7 @@ class Poem extends React.Component {
     super(props);
     this.state = {
       error: null,
-      isLoaded: false,
+      isLoading: false,
       poemTitles: []
     };
   }

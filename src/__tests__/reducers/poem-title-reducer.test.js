@@ -5,7 +5,7 @@ describe('poemTitleReducer', () => {
 
   const defaultState = {
     error: null,
-      isLoaded: false,
+      isLoading: false,
       poemTitles: []
   };
 
@@ -14,7 +14,7 @@ describe('poemTitleReducer', () => {
   test('should successfully return the default state if no action is passed into it', () => {
     expect(poemTitleReducer(defaultState, {type: null})).toEqual({
       error: null,
-      isLoaded: false,
+      isLoading: false,
       poemTitles: []
     });
   });
@@ -26,7 +26,7 @@ describe('poemTitleReducer', () => {
 
     expect(poemTitleReducer(defaultState, action)).toEqual({
       error: null,
-      isLoaded: true,
+      isLoading: true,
       poemTitles: []
     });
   });
