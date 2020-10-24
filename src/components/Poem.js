@@ -34,6 +34,9 @@ class Poem extends React.Component {
 
   buttonClick = () => {
     const success = document.querySelector('#successfulCall');
+    this.setState({
+      isLoading: true
+    });
     fetch("https://pafmon-walt-whitman-poems.p.rapidapi.com/poems/", {
       "method": "GET",
       "headers": {
@@ -44,7 +47,7 @@ class Poem extends React.Component {
     .then(response => response.json())
     .then((jsonifiedResponse) => {
       this.setState({
-        isLoaded: true,
+        isLoading: false,
         poemTitles: jsonifiedResponse[0]
       });
       success.textContent = "dude";
@@ -52,18 +55,18 @@ class Poem extends React.Component {
     })
     .catch((error) => {
       this.setState({
-        isLoaded: true,
+        isLoading: false,
         error
       });
     });
   }
   
   render() {
-    const { error, isLoaded, poemTitles } = this.state;
+    const { error, isLoading, poemTitles } = this.state;
     let p;
     if(error){
       p = `Error: {error.message}`;
-    } else if (!isLoaded) {
+    } else if (!isLoading) {
       p = "Not yet...";
     } else {
       p = "Hello";
