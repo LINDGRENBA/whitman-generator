@@ -45,4 +45,18 @@ describe('poemTitleReducer', () => {
     });
   });
 
+  test('failing to get poem titles should change isLoading to false and add an error message', () => {
+    const error = "some error";
+    action = {
+      type: c.GET_POEM_TITLES_FAILURE,
+      error
+    };
+
+    expect(poemTitleReducer(defaultState, action)).toEqual({
+      error: "some error",
+      isLoading: false,
+      poemTitles: []
+    });
+  });
+
 });
