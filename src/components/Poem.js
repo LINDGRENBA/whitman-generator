@@ -37,28 +37,29 @@ class Poem extends React.Component {
     this.setState({
       isLoading: true
     });
-    fetch("https://pafmon-walt-whitman-poems.p.rapidapi.com/poems/", {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-host": "pafmon-walt-whitman-poems.p.rapidapi.com",
-        "x-rapidapi-key": `${process.env.REACT_APP_API_KEY}`
-      }
-    })
-    .then(response => response.json())
-    .then((jsonifiedResponse) => {
-      this.setState({
-        isLoading: false,
-        poemTitles: jsonifiedResponse[0]
-      });
-      success.textContent = "dude";
-      console.log("dude");
-    })
-    .catch((error) => {
-      this.setState({
-        isLoading: false,
-        error
-      });
-    });
+    success.textContent = "Hey dudettes.";
+    // fetch("https://pafmon-walt-whitman-poems.p.rapidapi.com/poems/", {
+    //   "method": "GET",
+    //   "headers": {
+    //     "x-rapidapi-host": "pafmon-walt-whitman-poems.p.rapidapi.com",
+    //     "x-rapidapi-key": `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // })
+    // .then(response => response.json())
+    // .then((jsonifiedResponse) => {
+    //   this.setState({
+    //     isLoading: false,
+    //     poemTitles: jsonifiedResponse[0]
+    //   });
+    //   success.textContent = "dude";
+    //   console.log("dude");
+    // })
+    // .catch((error) => {
+    //   this.setState({
+    //     isLoading: false,
+    //     error
+    //   });
+    // });
   }
   
   render() {
